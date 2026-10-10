@@ -1,0 +1,181 @@
+/**
+ * GramKalyan - Print Stylesheet
+ * Optimized for clean, ink-efficient A4 printing of Grama One / CSC Kiosk Slips
+ */
+
+@media print {
+  /* Hide all interactive site chrome */
+  body * {
+    visibility: hidden;
+  }
+
+  .modal-overlay,
+  .site-header,
+  .site-footer,
+  .hero-section,
+  .wizard-box,
+  .calculator-wrap,
+  .schemes-section,
+  .survey-section,
+  .btn-close-modal,
+  .modal-header-bar,
+  .modal-actions-right,
+  button,
+  a {
+    display: none !important;
+  }
+
+  /* Only make slip visible */
+  #slipModal,
+  #slipModal * {
+    visibility: visible;
+  }
+
+  #slipModal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+    opacity: 1 !important;
+  }
+
+  .modal-card {
+    box-shadow: none !important;
+    border: none !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+
+  .print-kiosk-slip {
+    width: 100%;
+    font-family: Arial, 'Noto Sans Kannada', sans-serif;
+    color: #000000;
+    padding: 20px;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    background: #ffffff;
+  }
+
+  .slip-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .slip-emblem {
+    font-size: 3rem;
+  }
+
+  .slip-title-box h2 {
+    font-size: 1.4rem;
+    color: #000000;
+    margin-bottom: 4px;
+  }
+
+  .slip-title-box p {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .token-id {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 1px solid #000;
+    padding: 2px 8px;
+    margin-top: 4px;
+  }
+
+  .slip-divider {
+    border: none;
+    border-top: 1px solid #000000;
+    margin: 14px 0;
+  }
+
+  .slip-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+  }
+
+  .slip-table td {
+    padding: 6px 10px;
+    border: 1px solid #888888;
+  }
+
+  .score-badge {
+    font-weight: bold;
+    padding: 2px 6px;
+    border: 1px solid #000;
+  }
+
+  .slip-section h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    border-bottom: 1px dashed #666;
+    padding-bottom: 4px;
+  }
+
+  .slip-schemes-list {
+    margin-left: 20px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .slip-docs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .docs-column {
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  .docs-column h4 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .docs-column ul {
+    list-style: none;
+    font-size: 0.85rem;
+  }
+
+  .docs-column ul li {
+    margin-bottom: 4px;
+  }
+
+  .slip-instructions {
+    background: #f4f4f4;
+    padding: 10px;
+    border: 1px dashed #333;
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+  }
+
+  .slip-helplines {
+    margin-top: 6px;
+    font-weight: bold;
+  }
+
+  .slip-footer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #555;
+    border-top: 1px solid #ccc;
+    padding-top: 8px;
+  }
+}

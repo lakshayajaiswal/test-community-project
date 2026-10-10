@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ಗ್ರಾಮ ಕಲ್ಯಾಣ | GramKalyan — Government Scheme Awareness & Livelihood Hub (VKIT Community Project)</title>
+  <meta name="description" content="A community-centric, native language voice-assisted portal empowering rural citizens to discover, calculate benefits, and prepare documentation for government livelihood schemes. Developed for VKIT Community Project.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand-wrap">
+        <div class="brand-emblem">🏛️</div>
+        <div class="brand-text">
+          <h1 data-i18n="portalTitle">ಗ್ರಾಮ ಕಲ್ಯಾಣ</h1>
+          <p data-i18n="portalSubtitle">ಸರ್ಕಾರಿ ಯೋಜನೆಗಳ ಜಾಗೃತಿ ಮತ್ತು ಜೀವನೋಪಾಯ ಸುಧಾರಣೆ ವೇದಿಕೆ</p>
+        </div>
+      </a>
+
+      <span class="vkit-tag">
+        <span>🎓</span>
+        <span data-i18n="vkitBadge">VKIT ಸಮುದಾಯ ಯೋಜನೆ</span>
+      </span>
+
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#wizardSection" data-i18n="navEligibility">ಯೋಜನೆ ಪರಿಶೀಲಕ</a>
+          <a href="#calculatorSection" data-i18n="navCalculator">ಲಾಭ ಲೆಕ್ಕಾಚಾರ</a>
+          <a href="#schemesSection" data-i18n="navSchemes">ಯೋಜನೆಗಳು</a>
+          <a href="#docSlipSection" data-i18n="navDocSlip">ದಾಖಲೆ ಪರಿಶೀಲನೆ</a>
+          <a href="#surveySection" data-i18n="navSurvey">ಗ್ರಾಮ ಸಮೀಕ್ಷೆ</a>
+        </nav>
+
+        <!-- Trilingual Language Switcher -->
+        <div class="lang-switcher" aria-label="Language Selector">
+          <button class="lang-btn active" data-lang="kn">ಕನ್ನಡ</button>
+          <button class="lang-btn" data-lang="hi">हिंदी</button>
+          <button class="lang-btn" data-lang="en">English</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero-section" id="home">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <div class="hero-badge-pill">
+          <span>🌾</span>
+          <span>ಗ್ರಾಮೀಣ ಜೀವನೋಪಾಯ ಸಬಲೀಕರಣ (Rural Empowerment)</span>
+        </div>
+        <h2 class="hero-title" data-i18n="heroTitle">ನಿಮ್ಮ ಜೀವನೋಪಾಯಕ್ಕೆ ಸೂಕ್ತವಾದ ಸರ್ಕಾರಿ ಯೋಜನೆಗಳನ್ನು ಕಂಡುಕೊಳ್ಳಿ</h2>
+        <p class="hero-desc" data-i18n="heroDesc">
+          ರೈತರು, ಕುಶಲಕರ್ಮಿಗಳು, ಬೀದಿ ವ್ಯಾಪಾರಿಗಳು, ಮಹಿಳೆಯರು ಮತ್ತು ಯುವಕರಿಗಾಗಿ ಕೇಂದ್ರ ಮತ್ತು ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ಯೋಜನೆಗಳು ಸರಳ ಕನ್ನಡದಲ್ಲಿ ಮತ್ತು ಧ್ವನಿ ಸೌಲಭ್ಯದೊಂದಿಗೆ ಲಭ್ಯ.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#wizardSection" class="btn-hero-primary">
+            <span>✨</span>
+            <span data-i18n="heroCtaFind">ನನ್ನ ಯೋಜನೆ ತಿಳಿಯಿರಿ (3 ಕ್ಲಿಕ್‌ಗಳು)</span>
+          </a>
+          <button id="btnHeroListen" class="btn-hero-voice">
+            <span>🔊</span>
+            <span data-i18n="heroCtaListen">ಧ್ವನಿ ಮಾರ್ಗದರ್ಶಿ ಕೇಳಿ</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-stats-banner">
+          <div class="stat-tile">
+            <div class="icon">📜</div>
+            <div class="value" data-i18n="statSchemes">20+ ಪ್ರಮುಖ ಯೋಜನೆಗಳು</div>
+            <div class="label">ಕೇಂದ್ರ & ಕರ್ನಾಟಕ ಸರ್ಕಾರ</div>
+          </div>
+          <div class="stat-tile">
+            <div class="icon">💵</div>
+            <div class="value" data-i18n="statBenefit">₹15,000+ ಸರಾಸರಿ ನೆರವು</div>
+            <div class="label">ಪ್ರತಿ ಕುಟುಂಬಕ್ಕೆ ಲಭ್ಯ ಲಾಭ</div>
+          </div>
+          <div class="stat-tile">
+            <div class="icon">⚡</div>
+            <div class="value" data-i18n="statSpeed">&lt; 60 ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಪರಿಶೀಲನೆ</div>
+            <div class="label">ಕೇವಲ 3 ಸರಳ ಆಯ್ಕೆಗಳು</div>
+          </div>
+          <div class="stat-tile">
+            <div class="icon">🗣️</div>
+            <div class="value" data-i18n="statLang">ಸಂಪೂರ್ಣ ಕನ್ನಡ & ಧ್ವನಿ</div>
+            <div class="label">ಓದಲು ಬಾರದವರಿಗೂ ಸುಲಭ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 1: 3-TAP WIZARD ================= -->
+  <section class="section-padding" id="wizardSection">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag" data-i18n="navEligibility">ಯೋಜನೆ ಪರಿಶೀಲಕ</span>
+        <h2 data-i18n="wizardTitle">ತ್ವರಿತ ಯೋಜನೆ ಪರಿಶೀಲಕ (Quick Match)</h2>
+        <p data-i18n="wizardSubtitle">ನಿಮ್ಮ ಉದ್ಯೋಗ ಮತ್ತು ವಿವರಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ, ನಿಮ್ಮ ಹಕ್ಕಿನ ಯೋಜನೆಗಳನ್ನು ತಕ್ಷಣ ಪಡೆಯಿರಿ</p>
+      </div>
+
+      <div class="wizard-box">
+        <form id="quickWizardForm">
+          <div class="wizard-steps-grid">
+            
+            <!-- Step 1: Occupation -->
+            <div class="wizard-step-col">
+              <h3 data-i18n="step1Title">ಹಂತ 1: ನಿಮ್ಮ ಮುಖ್ಯ ಉದ್ಯೋಗ ಯಾವುದು?</h3>
+              <div class="wizard-options-vertical">
+                <label class="wizard-radio-card">
+                  <input type="radio" name="wizardOcc" value="farmer" checked />
+                  <span>🌾 <span data-i18n="catFarmer">ರೈತರು ಮತ್ತು ಕೃಷಿ</span></span>
+                </label>
+                <label class="wizard-radio-card">
+                  <input type="radio" name="wizardOcc" value="artisan" />
+                  <span>🛠️ <span data-i18n="catArtisan">ಕುಶಲಕರ್ಮಿಗಳು (ವಿಶ್ವಕರ್ಮ)</span></span>
+                </label>
+                <label class="wizard-radio-card">
+                  <input type="radio" name="wizardOcc" value="vendor" />
+                  <span>🛒 <span data-i18n="catVendor">ಬೀದಿ ವ್ಯಾಪಾರಿಗಳು</span></span>
+                </label>
+                <label class="wizard-radio-card">
+                  <input type="radio" name="wizardOcc" value="women" />
+                  <span>🧵 <span data-i18n="catWomen">ಮಹಿಳೆಯರು ಮತ್ತು ಸ್ವಸಹಾಯ ಸಂಘ</span></span>
+                </label>
+                <label class="wizard-radio-card">
+                  <input type="radio" name="wizardOcc" value="youth" />
+                  <span>🎓 <span data-i18n="catYouth">ಯುವಕರು ಮತ್ತು ಕೌಶಲ್ಯ ತರಬೇತಿ</span></span>
+                </label>
+                <label class="wizard-radio-card">
+                  <input type="radio" name="wizardOcc" value="worker" />
+                  <span>🏗️ <span data-i18n="catWorker">ದಿನಗೂಲಿ ಮತ್ತು ಅಸಂಘಟಿತ ಕಾರ್ಮಿಕರು</span></span>
+                </label>
+                <label class="wizard-radio-card">
+                  <input type="radio" name="wizardOcc" value="all" />
+                  <span>✨ <span data-i18n="catAll">ಎಲ್ಲಾ ವಲಯಗಳು</span></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 2: Income / Landholding -->
+            <div class="wizard-step-col">
+              <h3 data-i18n="step2Title">ಹಂತ 2: ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ / ಭೂಮಿ ವಿಸ್ತೀರ್ಣ</h3>
+              <div class="wizard-options-vertical">
+                <label class="wizard-radio-card">
+                  <input type="radio" name="wizardIncome" value="low" checked />
+                  <span data-i18n="incomeLow">ವಾರ್ಷಿಕ ಆದಾಯ ₹1.5 ಲಕ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ / ಸಣ್ಣ ರೈತ (&lt; 5 ಎಕರೆ)</span>
+                </label>
+                <label class="wizard-radio-card">
+                  <input type="radio" name="wizardIncome" value="mid" />
+                  <span data-i18n="incomeMid">ವಾರ್ಷಿಕ ಆದಾಯ ₹1.5 ಲಕ್ಷ - ₹3 ಲಕ್ಷ</span>
+                </label>
+                <label class="wizard-radio-card">
+                  <input type="radio" name="wizardIncome" value="above" />
+                  <span data-i18n="incomeAbove">ವಾರ್ಷಿಕ ಆದಾಯ ₹3 ಲಕ್ಷಕ್ಕಿಂತ ಹೆಚ್ಚು</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 3: Category / Gender -->
+            <div class="wizard-step-col">
+              <h3 data-i18n="step3Title">ಹಂತ 3: ವರ್ಗ / ಲಿಂಗ</h3>
+              <div class="wizard-options-vertical">
+                <label class="wizard-radio-card">
+                  <input type="radio" name="wizardGender" value="all" checked />
+                  <span data-i18n="genderAll">ಸಾಮಾನ್ಯ / ಪುರುಷರು</span>
+                </label>
+                <label class="wizard-radio-card">
+                  <input type="radio" name="wizardGender" value="female" />
+                  <span data-i18n="genderFemale">ಮಹಿಳೆ (ವಿಶೇಷ ಸೌಲಭ್ಯಗಳು)</span>
+                </label>
+                <label class="wizard-radio-card">
+                  <input type="radio" name="wizardGender" value="scst" />
+                  <span data-i18n="catSCST">ಎಸ್.ಸಿ / ಎಸ್.ಟಿ / ಹಿಂದುಳಿದ ವರ್ಗ</span>
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="wizard-actions">
+            <button type="submit" class="btn-primary" data-i18n="btnCheckMatch">ಯೋಜನೆಗಳನ್ನು ತೋರಿಸಿ</button>
+            <button type="button" id="btnResetFiltersMain" class="btn-primary-outline" data-i18n="resetFilter">ಮರುಹೊಂದಿಸಿ</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- ================= DIRECT BENEFIT CALCULATOR ================= -->
+      <div class="calculator-wrap" id="calculatorSection">
+        <div class="calc-header">
+          <h3 data-i18n="calcTitle">ನನ್ನ ಸಂಭಾವ್ಯ ಲಾಭ ಲೆಕ್ಕಾಚಾರ (Livelihood ROI)</h3>
+          <p data-i18n="calcSubtitle">ನೀವು ಪಡೆಯಬಹುದಾದ ಒಟ್ಟು ಸರ್ಕಾರಿ ನೆರವು, ಬಡ್ಡಿ ರಹಿತ ಸಾಲ ಮತ್ತು ಉಚಿತ ಟೂಲ್‌ಕಿಟ್‌ಗಳು</p>
+        </div>
+
+        <div class="calc-grid">
+          <div class="calc-card">
+            <div class="calc-card-icon">💰</div>
+            <div class="calc-card-val" id="calcAnnualCash">₹16,000</div>
+            <div class="calc-card-lbl" data-i18n="totalAnnualSupport">ವಾರ್ಷಿಕ ನೇರ ಆರ್ಥಿಕ ನೆರವು</div>
+          </div>
+
+          <div class="calc-card gold">
+            <div class="calc-card-icon">🏦</div>
+            <div class="calc-card-val" id="calcCreditLoan">₹3,00,000</div>
+            <div class="calc-card-lbl" data-i18n="totalLoanCredit">ಬಡ್ಡಿ ರಹಿತ / ಸಬ್ಸಿಡಿ ಸಾಲ ಸೌಲಭ್ಯ</div>
+          </div>
+
+          <div class="calc-card blue">
+            <div class="calc-card-icon">🛡️</div>
+            <div class="calc-card-val" id="calcInsurance">₹5,00,000</div>
+            <div class="calc-card-lbl" data-i18n="totalInsurance">ಉಚಿತ ಆರೋಗ್ಯ / ಜೀವ ವಿಮೆ ರಕ್ಷಣೆ</div>
+          </div>
+
+          <div class="calc-card saffron">
+            <div class="calc-card-icon">🧰</div>
+            <div class="calc-card-val" id="calcToolkits">₹15,000</div>
+            <div class="calc-card-lbl" data-i18n="totalFreeAssets">ಉಚಿತ ಉಪಕರಣ / ಕೌಶಲ್ಯ ತರಬೇತಿ ಮೌಲ್ಯ</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION 2: SCHEMES EXPLORER ================= -->
+  <section class="section-padding" id="schemesSection" style="background: #f4f8f5;">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag" data-i18n="navSchemes">ಯೋಜನೆಗಳು</span>
+        <h2>ಸರ್ಕಾರಿ ಕಲ್ಯಾಣ ಯೋಜನೆಗಳ ಕೈಪಿಡಿ</h2>
+        <p>ಕೇಂದ್ರ ಮತ್ತು ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ಸಕಾಲಿಕ ಯೋಜನೆಗಳ ವಿವರಗಳು, ಮಾನದಂಡಗಳು ಮತ್ತು ಅರ್ಜಿ ಜಾಲತಾಣಗಳು</p>
+      </div>
+
+      <!-- Category Filter Pills Bar -->
+      <div class="category-filter-wrap" id="categoryFilterBar">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <!-- Controls Subbar -->
+      <div class="controls-subbar">
+        <div class="level-tabs">
+          <button class="level-tab active" data-level="all">ಎಲ್ಲಾ (All)</button>
+          <button class="level-tab" data-level="central">🇮🇳 ಕೇಂದ್ರ (Central)</button>
+          <button class="level-tab" data-level="karnataka">🟡🔴 ಕರ್ನಾಟಕ (Karnataka)</button>
+        </div>
+
+        <div class="search-input-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="schemeSearchInput" placeholder="ಯೋಜನೆ ಹೆಸರು ಅಥವಾ ಕೀವರ್ಡ್ ಹುಡುಕಿ..." />
+        </div>
+
+        <div id="matchingCount" style="font-weight: 700; color: var(--primary-dark); font-size: 0.95rem;">
+          20+ ಪ್ರಮುಖ ಯೋಜನೆಗಳು
+        </div>
+      </div>
+
+      <!-- Schemes Grid -->
+      <div class="schemes-grid" id="schemesGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 3: DOCUMENT READINESS SLIP ================= -->
+  <section class="section-padding" id="docSlipSection">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag" data-i18n="navDocSlip">ದಾಖಲೆ ಪರಿಶೀಲನೆ</span>
+        <h2 data-i18n="slipTitle">ಗ್ರಾಮ ಒನ್ / ಸೇವಾ ಸಿಂಧು ಅರ್ಜಿ ಟೋಕನ್ ಚೀಟಿ</h2>
+        <p data-i18n="slipSubtitle">ಸಿಎಸ್‌ಸಿ ಅಥವಾ ಸೈಬರ್ ಕೆಫೆಗೆ ಹೋಗುವ ಮುನ್ನ ನಿಮ್ಮ ದಾಖಲೆಗಳನ್ನು ಇಲ್ಲಿ ಪರಿಶೀಲಿಸಿ, 1-ಕ್ಲಿಕ್ ಪ್ರಿಂಟ್ ಪಡೆಯಿರಿ</p>
+      </div>
+
+      <div class="slip-section-wrap">
+        <div class="applicant-quick-inputs" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px;">
+          <div class="form-group">
+            <label>ಅರ್ಜಿದಾರರ ಹೆಸರು (Name):</label>
+            <input type="text" id="applicantNameInput" placeholder="ಉದಾ: ರಮೇಶ್ ಗೌಡ" />
+          </div>
+          <div class="form-group">
+            <label>ಗ್ರಾಮ / ಬಡಾವಣೆ (Village):</label>
+            <input type="text" id="applicantVillageInput" placeholder="ಉದಾ: ಕುಂಬಳಗೋಡು" />
+          </div>
+          <div class="form-group">
+            <label>ಮೊಬೈಲ್ ಸಂಖ್ಯೆ (Mobile No):</label>
+            <input type="tel" id="applicantPhoneInput" placeholder="ಉದಾ: 9876543210" />
+          </div>
+        </div>
+
+        <h4 data-i18n="docCheckPrompt" style="font-size: 1.05rem; font-weight: 700; color: var(--primary-dark);">ನಿಮ್ಮ ಬಳಿ ಇರುವ ದಾಖಲೆಗಳ ಮೇಲೆ ಟಿಕ್ ಮಾಡಿ:</h4>
+
+        <!-- Document Checklist items -->
+        <div class="doc-checklist-grid" id="docChecklistItems">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Readiness Progress Gauge -->
+        <div class="readiness-meter-box">
+          <div class="meter-header">
+            <h4 data-i18n="readinessScore">ದಾಖಲೆ ಸಿದ್ಧತಾ ಸ್ಕೋರ್:</h4>
+            <span id="readinessPercentLabel" style="font-size: 1.4rem; font-weight: 800; color: var(--primary-dark);">67%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="readinessProgressBar" style="width: 67%;"></div>
+          </div>
+          <div class="readiness-status status-medium" id="readinessStatusMsg">
+            🟡 ಗಮನಿಸಿ: ಇನ್ನೂ 1-2 ದಾಖಲೆಗಳು ಬಾಕಿ ಇವೆ. ತಹಸೀಲ್ದಾರ್ ಕಚೇರಿ ಅಥವಾ ಬ್ಯಾಂಕಿನಲ್ಲಿ ಪಡೆಯಿರಿ.
+          </div>
+        </div>
+
+        <div class="slip-action-footer">
+          <button id="btnOpenSlipModal" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+            <span>🖨️</span>
+            <span data-i18n="btnPrintSlip">ಪ್ರಿಂಟ್ ಟೋಕನ್ ಚೀಟಿ (Print Slip)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 4: FIELD SURVEY & ANALYTICS ================= -->
+  <section class="section-padding" id="surveySection" style="background: #f8faf8;">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag" data-i18n="navSurvey">ಗ್ರಾಮ ಸಮೀಕ್ಷೆ</span>
+        <h2 data-i18n="surveyTitle">ಗ್ರಾಮ ಜಾಗೃತಿ ಸಮೀಕ್ಷೆ (Field Survey Tool)</h2>
+        <p data-i18n="surveySubtitle">VKIT ಸಮುದಾಯ ಯೋಜನೆಯ ಕ್ಷೇತ್ರ ಸಮೀಕ್ಷಾ ಮಾಹಿತಿ ದಾಖಲಿಸಿ &amp; ನೈಜ ವಿಶ್ಲೇಷಣೆ ವೀಕ್ಷಿಸಿ</p>
+      </div>
+
+      <div class="survey-layout-grid">
+        <!-- Survey Form -->
+        <div class="survey-form-card">
+          <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 18px;">
+            📝 ಹೊಸ ಫಲಾನುಭವಿಯ ಸಮೀಕ್ಷೆ ದಾಖಲಿಸಿ
+          </h3>
+          
+          <form id="villageSurveyForm">
+            <div class="form-group">
+              <label data-i18n="lblVillageName">ಗ್ರಾಮ / ಬಡಾವಣೆ ಹೆಸರು:</label>
+              <input type="text" id="surveyVillage" required placeholder="ಉದಾ: ಕುಂಬಳಗೋಡು ಗ್ರಾಮೀಣ" />
+            </div>
+
+            <div class="form-group">
+              <label data-i18n="lblRespondentName">ಫಲಾನುಭವಿಯ ಹೆಸರು:</label>
+              <input type="text" id="surveyName" required placeholder="ಉದಾ: ಮಂಜುನಾಥ್" />
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+              <div class="form-group">
+                <label data-i18n="lblAge">ವಯಸ್ಸು:</label>
+                <input type="number" id="surveyAge" min="16" max="95" value="42" required />
+              </div>
+              <div class="form-group">
+                <label data-i18n="lblOccupation">ಉದ್ಯೋಗ:</label>
+                <select id="surveyOccupation">
+                  <option value="farmer">ರೈತರು (Farmer)</option>
+                  <option value="artisan">ಕುಶಲಕರ್ಮಿ (Artisan)</option>
+                  <option value="vendor">ಬೀದಿ ವ್ಯಾಪಾರಿ (Vendor)</option>
+                  <option value="women">ಮಹಿಳಾ SHG (Women)</option>
+                  <option value="youth">ಯುವಕರು (Youth)</option>
+                  <option value="worker">ದಿನಗೂಲಿ (Daily Worker)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label data-i18n="lblAwarenessBefore">ಈ ಮೊದಲು ಸರ್ಕಾರಿ ಯೋಜನೆಗಳ ಬಗ್ಗೆ ತಿಳಿದಿತ್ತೇ?</label>
+              <div class="radio-inline-group">
+                <label><input type="radio" name="surveyAware" id="surveyAwareYes" value="yes" /> <span data-i18n="lblYes">ಹೌದು</span></label>
+                <label><input type="radio" name="surveyAware" id="surveyAwareNo" value="no" checked /> <span data-i18n="lblNo">ಇಲ್ಲ</span></label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>ದಾಖಲೆಗಳ ಕೊರತೆಯಿಂದ ಅರ್ಜಿ ನಿಂತಿದೆಯೇ?</label>
+              <div class="radio-inline-group">
+                <label><input type="radio" name="surveyDocIssue" id="surveyDocIssueYes" value="yes" checked /> <span data-i18n="lblYes">ಹೌದು</span></label>
+                <label><input type="radio" name="surveyDocIssue" id="surveyDocIssueNo" value="no" /> <span data-i18n="lblNo">ಇಲ್ಲ</span></label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label data-i18n="lblMajorBarrier">ಅರ್ಜಿ ಸಲ್ಲಿಸಲು ಪ್ರಮುಖ ಅಡೆತಡೆ ಯಾವುದು?</label>
+              <select id="surveyBarrier">
+                <option value="language">ಮಾಹಿತಿ / ಭಾಷೆಯ ಕೊರತೆ (Language / Information)</option>
+                <option value="docs">ದಾಖಲೆಗಳ ಗೊಂದಲ / ಕೊರತೆ (Documentation)</option>
+                <option value="internet">ಆನ್‌ಲೈನ್ / ಕಂಪ್ಯೂಟರ್ ಸೌಲಭ್ಯವಿಲ್ಲ (No Internet)</option>
+                <option value="bribery">ಮಧ್ಯವರ್ತಿಗಳ ಕಾಟ (Middlemen / Delay)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;" data-i18n="btnSaveSurvey">
+              ಸಮೀಕ್ಷೆ ದಾಖಲಿಸಿ
+            </button>
+
+            <div id="surveySuccessMsg" style="display: none; background: #dcfce7; color: #166534; padding: 10px; border-radius: 8px; margin-top: 12px; font-size: 0.9rem; font-weight: 700; text-align: center;">
+              ✅ ಸಮೀಕ್ಷಾ ಮಾಹಿತಿ ಯಶಸ್ವಿಯಾಗಿ ಸಂಗ್ರಹವಾಯಿತು!
+            </div>
+          </form>
+        </div>
+
+        <!-- Real-Time Analytics Dashboard -->
+        <div class="survey-analytics-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+            <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--primary-dark);" data-i18n="surveySummary">
+              📊 ಸಮೀಕ್ಷೆಯ ಸಂಕ್ಷಿಪ್ತ ವಿಶ್ಲೇಷಣೆ
+            </h3>
+            <button id="btnExportSurveyCsv" class="btn-primary-outline" style="font-size: 0.82rem; padding: 6px 12px;">
+              📥 CSV ಡೌನ್‌ಲೋಡ್
+            </button>
+          </div>
+
+          <div class="survey-metrics-grid">
+            <div class="survey-metric-box">
+              <div class="metric-num" id="metricSurveyTotal">15</div>
+              <div class="metric-lbl" data-i18n="metricTotalSurveyed">ಒಟ್ಟು ಸಮೀಕ್ಷೆ ನಡೆಸಿದವರು</div>
+            </div>
+            <div class="survey-metric-box">
+              <div class="metric-num" style="color: #b91c1c;" id="metricSurveyUnaware">73%</div>
+              <div class="metric-lbl" data-i18n="metricUnawarePercent">ಮೊದಲು ಮಾಹಿತಿಯಿಲ್ಲದವರು (%)</div>
+            </div>
+            <div class="survey-metric-box">
+              <div class="metric-num" style="color: #15803d;" id="metricSurveyDocReady">53%</div>
+              <div class="metric-lbl" data-i18n="metricDocReadiness">ದಾಖಲೆ ಸಿದ್ಧತೆ ಹೊಂದಿರುವವರು (%)</div>
+            </div>
+            <div class="survey-metric-box">
+              <div class="metric-num" style="font-size: 1.3rem;" id="metricSurveyTopCat">🌾 ರೈತರು</div>
+              <div class="metric-lbl" data-i18n="metricTopCategory">ಹೆಚ್ಚು ಬೇಡಿಕೆಯಿರುವ ವಲಯ</div>
+            </div>
+          </div>
+
+          <!-- Dynamic Barrier Chart -->
+          <div class="chart-box">
+            <h4>ಪ್ರಮುಖ ಅಡೆತಡೆಗಳ ಹಂಚಿಕೆ (Barrier Distribution):</h4>
+            <div class="chart-bars-wrap" id="barrierChartBars">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 5: 15-WEEK DOSSIER BANNER ================= -->
+  <section class="section-padding" style="background: linear-gradient(135deg, #0b462a 0%, #15803d 100%); color: #ffffff; text-align: center;">
+    <div class="container">
+      <span class="section-tag" style="background: rgba(255, 255, 255, 0.2); color: #ffffff;" data-i18n="navEvidence">
+        15-ವಾರಗಳ ದಾಖಲೆ
+      </span>
+      <h2 style="font-size: 2.2rem; font-weight: 800; margin: 12px 0 16px; color: #ffffff;" data-i18n="evidenceTitle">
+        VKIT 15-ವಾರಗಳ ಚಟುವಟಿಕೆ ಮತ್ತು ಪುರಾವೆ ದಾಖಲೆ
+      </h2>
+      <p style="font-size: 1.1rem; max-width: 720px; margin: 0 auto 28px; color: rgba(255, 255, 255, 0.9);" data-i18n="evidenceSubtitle">
+        ಮೌಲ್ಯಮಾಪನ ಸಮಿತಿಗೆ ಬೇಕಾದ ವಾರ 1 ರಿಂದ 15 ರವರೆಗಿನ ಸಂಪೂರ್ಣ ಅಧಿಕೃತ ವರದಿಗಳು, ಪ್ರಾತ್ಯಕ್ಷಿಕೆ ಪುರಾವೆಗಳು ಮತ್ತು ಮೌಖಿಕ ಪರೀಕ್ಷಾ (Viva) ಕೈಪಿಡಿ.
+      </p>
+      
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <button id="btnOpenEvidenceModal" class="btn-hero-primary" data-i18n="btnOpenDossier">
+          📂 15-ವಾರಗಳ ಸಂಪೂರ್ಣ ದಾಖಲೆ ಪತ್ರ ವೀಕ್ಷಿಸಿ
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+            <span style="font-size: 1.8rem;">🏛️</span>
+            <h3 style="margin: 0;" data-i18n="portalTitle">ಗ್ರಾಮ ಕಲ್ಯಾಣ</h3>
+          </div>
+          <p data-i18n="footerDisclaimer">
+            ಗಮನಿಸಿ: ಈ ತಂತ್ರಾಂಶವನ್ನು VKIT ಸಮುದಾಯ ಯೋಜನೆಗಾಗಿ ಶಿಕ್ಷಣ ಮತ್ತು ಗ್ರಾಮೀಣ ಜಾಗೃತಿ ಉದ್ದೇಶದಿಂದ ಅಭಿವೃದ್ಧಿಪಡಿಸಲಾಗಿದೆ.
+          </p>
+          <div style="margin-top: 16px;">
+            <span class="vkit-tag" style="background: rgba(255,255,255,0.1); color: #fde68a; border-color: rgba(255,255,255,0.2);">
+              ವಿವೇಕಾನಂದ ಇನ್‌ಸ್ಟಿಟ್ಯೂಟ್ ಆಫ್ ಟೆಕ್ನಾಲಜಿ (VKIT) | ಬೆಂಗಳೂರು
+            </span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು</h3>
+          <ul class="footer-links">
+            <li><a href="#home">ಮುಖಪುಟ (Home)</a></li>
+            <li><a href="#wizardSection">ಯೋಜನೆ ಪರಿಶೀಲಕ (Eligibility Wizard)</a></li>
+            <li><a href="#calculatorSection">ಲಾಭ ಲೆಕ್ಕಾಚಾರ (Benefit ROI)</a></li>
+            <li><a href="#schemesSection">ಯೋಜನೆಗಳು (Schemes Directory)</a></li>
+            <li><a href="#docSlipSection">ಟೋಕನ್ ಚೀಟಿ (Kiosk Slip)</a></li>
+            <li><a href="#surveySection">ಕ್ಷೇತ್ರ ಸಮೀಕ್ಷೆ (Field Survey)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>ಅಧಿಕೃತ ಸಹಾಯವಾಣಿಗಳು (Helplines)</h3>
+          <div class="footer-helplines">
+            <div class="helpline-badge">📞 ಕಿಸಾನ್ ಕಾಲ್ ಸೆಂಟರ್: <strong>1800-180-1551</strong></div>
+            <div class="helpline-badge">📞 ಸೇವಾ ಸಿಂಧು (ಕರ್ನಾಟಕ): <strong>14447 / 1902</strong></div>
+            <div class="helpline-badge">📞 ಪಿಎಂ ವಿಶ್ವಕರ್ಮ: <strong>14434</strong></div>
+            <div class="helpline-badge">📞 ಆಯುಷ್ಮಾನ್ ಭಾರತ್: <strong>14555 / 104</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footerDevCredit">ವಿವೇಕಾನಂದ ತಾಂತ್ರಿಕ ಮಹಾವಿದ್ಯಾಲಯ (VKIT) ವಿದ್ಯಾರ್ಥಿ ಯೋಜನೆ | ಕರ್ನಾಟಕ</p>
+        <p>© 2026 GramKalyan Hub | Open Educational Community Resource</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL 1: SCHEME DETAILS MODAL ================= -->
+  <div class="modal-overlay" id="detailModal">
+    <div class="modal-card">
+      <div class="modal-header-bar">
+        <h3>ಯೋಜನಾ ವಿವರಗಳು (Scheme Details)</h3>
+        <button class="btn-close-modal" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBodyContent">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL 2: PRINTABLE KIOSK SLIP PREVIEW ================= -->
+  <div class="modal-overlay" id="slipModal">
+    <div class="modal-card" style="max-width: 820px;">
+      <div class="modal-header-bar">
+        <h3>ಗ್ರಾಮ ಒನ್ / ಸೇವಾ ಸಿಂಧು ಟೋಕನ್ ಚೀಟಿ ಪೂರ್ವವೀಕ್ಷಣೆ</h3>
+        <button class="btn-close-modal" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="slipPreviewArea">
+          <!-- Rendered dynamically -->
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 20px;">
+          <button class="btn-primary" id="btnPrintSlipAction">
+            🖨️ ಈಗಲೇ ಪ್ರಿಂಟ್ ಮಾಡಿ (Print Slip)
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL 3: 15-WEEK DOSSIER VIEWER ================= -->
+  <div class="modal-overlay" id="evidenceModal">
+    <div class="modal-card" style="max-width: 960px;">
+      <div class="modal-header-bar">
+        <h3>🎓 VKIT 15-ವಾರಗಳ ಸಮುದಾಯ ಯೋಜನೆ ದಾಖಲೆ (Curriculum Dossier)</h3>
+        <button class="btn-close-modal" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="background: #e8f5e9; border: 1px solid #c8e6c9; padding: 14px 18px; border-radius: 8px; margin-bottom: 20px;">
+          <p style="margin: 0; font-size: 0.92rem; color: #1b5e20;">
+            <strong>ವಿವೇಕಾನಂದ ತಾಂತ್ರಿಕ ಮಹಾವಿದ್ಯಾಲಯ (VKIT) ಮೌಲ್ಯಮಾಪನ ಮಾರ್ಗಸೂಚಿ:</strong> ಕೆಳಗಿನ ಕೋಷ್ಟಕವು ವಾರ 1 ರಿಂದ 15 ರವರೆಗಿನ ಪ್ರತಿಯೊಂದು ಹಂತದ ಚಟುವಟಿಕೆಗಳು, ವಿದ್ಯಾರ್ಥಿ ಹೊಣೆಗಾರಿಕೆಗಳು ಮತ್ತು ಸಲ್ಲಿಕೆಯಾಗುವ ಅಧಿಕೃತ ಪುರಾವೆಗಳನ್ನು ಒಳಗೊಂಡಿದೆ.
+          </p>
+        </div>
+
+        <div class="dossier-table-wrap">
+          <table class="dossier-table">
+            <thead>
+              <tr>
+                <th>ವಾರ / ಹಂತ</th>
+                <th>ಬೋಧನಾ-ಕಲಿಕಾ ಚಟುವಟಿಕೆ</th>
+                <th>ವಿದ್ಯಾರ್ಥಿ ಚಟುವಟಿಕೆ</th>
+                <th>ಸಲ್ಲಿಸಬೇಕಾದ ಪುರಾವೆ / Output</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ವಾರ 1</strong></td>
+                <td>ಕೋರ್ಸ್ ಪರಿಚಯ, ನೈತಿಕತೆ ಮತ್ತು ಮಾರ್ಗಸೂಚಿ</td>
+                <td>ಅವಶ್ಯಕತೆಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು ಮತ್ತು ತಂಡ ರಚನೆ</td>
+                <td>ತಂಡದ ಪಟ್ಟಿ &amp; ಕೋರ್ಸ್ ಯೋಜನೆ</td>
+              </tr>
+              <tr>
+                <td><strong>ವಾರ 2</strong></td>
+                <td>ಸಮುದಾಯ ಸಮಸ್ಯೆ ಗುರುತಿಸುವಿಕೆ &amp; ವಿಷಯ ಆಯ್ಕೆ</td>
+                <td>ಗ್ರಾಮೀಣ ಮಾಹಿತಿ ಅಂತರ ಮತ್ತು ಸಮಸ್ಯೆ ಗುರುತಿಸುವಿಕೆ</td>
+                <td>ಆಯ್ಕೆಮಾಡಿದ ಯೋಜನಾ ವಿಷಯ ದಾಖಲೆ</td>
+              </tr>
+              <tr>
+                <td><strong>ವಾರ 3</strong></td>
+                <td>ಫಲಾನುಭವಿಗಳೊಂದಿಗೆ ಚರ್ಚೆ &amp; ಪ್ರಾಥಮಿಕ ಸಮೀಕ್ಷೆ</td>
+                <td>ಗ್ರಾಮೀಣ ನಾಗರಿಕರಿಂದ ಪ್ರಾಥಮಿಕ ದತ್ತಾಂಶ ಸಂಗ್ರಹಣೆ</td>
+                <td>ಸಮೀಕ್ಷಾ ಟಿಪ್ಪಣಿಗಳು &amp; ಸಂದರ್ಶನ ದಾಖಲೆ</td>
+              </tr>
+              <tr>
+                <td><strong>ವಾರ 4</strong></td>
+                <td>ಸಮಸ್ಯೆಯ ನಿರೂಪಣೆ &amp; ಉದ್ದೇಶಗಳ ಸೂತ್ರೀಕರಣ</td>
+                <td>ಅಳತೆಮಾಡಬಹುದಾದ ಎಂಜಿನಿಯರಿಂಗ್ ಫಲಿತಾಂಶಗಳ ನಿರೂಪಣೆ</td>
+                <td>ಅಂಗೀಕೃತ ಸಮಸ್ಯೆಯ ನಿರೂಪಣೆ (Problem Statement)</td>
+              </tr>
+              <tr>
+                <td><strong>ವಾರ 5</strong></td>
+                <td>ಸಾಹಿತ್ಯ ವಿಮರ್ಶೆ &amp; ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಪೋರ್ಟಲ್‌ಗಳ ವಿಶ್ಲೇಷಣೆ</td>
+                <td>MyScheme, ಸೇವಾ ಸಿಂಧು ಮತ್ತು ಹೊಸ ಪರಿಹಾರದ ತುಲನೆ</td>
+                <td>ಮೂಲ ರೇಖಾ ವಿಶ್ಲೇಷಣಾ ಸಾರಾಂಶ (Baseline Sheet)</td>
+              </tr>
+              <tr>
+                <td><strong>ವಾರ 6</strong></td>
+                <td>ಯೋಜನಾ ಯೋಜನೆ ಮತ್ತು ಪಾತ್ರ ನಿಯೋಜನೆ</td>
+                <td>ಕಾರ್ಯಗಳ ಹಂಚಿಕೆ, ವೇಳಾಪಟ್ಟಿ ಮತ್ತು ಗ್ಯಾಂಟ್ ಚಾರ್ಟ್</td>
+                <td>ಕೆಲಸದ ಯೋಜನೆ / Gantt Chart</td>
+              </tr>
+              <tr>
+                <td><strong>ವಾರ 7</strong></td>
+                <td>ಸಾಧ್ಯತಾ ವಿಶ್ಲೇಷಣೆ &amp; ಪರ್ಯಾಯ ಪರಿಹಾರಗಳ ಮೌಲ್ಯಮಾಪನ</td>
+                <td>ತಾಂತ್ರಿಕ ಸಾಧ್ಯತೆ, ಆಫ್‌ಲೈನ್ ಮತ್ತು ಸ್ಥಳೀಯ ಭಾಷಾ ಆಯ್ಕೆಗಳು</td>
+                <td>ಪರ್ಯಾಯ ಪರಿಹಾರಗಳ ಹಾಳೆ (Alternatives Sheet)</td>
+              </tr>
+              <tr>
+                <td><strong>ವಾರ 8</strong></td>
+                <td>ಅಂತಿಮ ಪರಿಹಾರದ ಆಯ್ಕೆ &amp; ವಿನ್ಯಾಸ ತರ್ಕ</td>
+                <td>ಸ್ಥಳೀಯ ಭಾಷಾ UI ಮತ್ತು ಧ್ವನಿ ಸೌಲಭ್ಯದ ಅಂತಿಮ ಪರಿಕಲ್ಪನೆ</td>
+                <td>ಪರಿಕಲ್ಪನಾ ಟಿಪ್ಪಣಿ / ವಿನ್ಯಾಸ ರೂಪರೇಖೆ</td>
+              </tr>
+              <tr>
+                <td><strong>ವಾರ 9</strong></td>
+                <td>ದತ್ತಾಂಶ ಸಂಸ್ಕರಣೆ &amp; ಲಾಭ ಲೆಕ್ಕಾಚಾರ ಗಣನೆ</td>
+                <td>ಅರ್ಹತೆಯ ಅಲ್ಗಾರಿದಮ್ &amp; ಆರ್ಥಿಕ ROI ಗಣನೆ</td>
+                <td>ತಾಂತ್ರಿಕ ವಿಶ್ಲೇಷಣಾ ಹಾಳೆ (Technical Sheet)</td>
+              </tr>
+              <tr>
+                <td><strong>ವಾರ 10</strong></td>
+                <td>ಮಾದರಿ ಅಪ್ಲಿಕೇಶನ್ ಅಭಿವೃದ್ಧಿ (App Development)</td>
+                <td>ಗ್ರಾಮ ಕಲ್ಯಾಣ ವೆಬ್ ಪೋರ್ಟಲ್ ನಿರ್ಮಾಣ (HTML/CSS/JS)</td>
+                <td><strong>ಕಾರ್ಯನಿರ್ವಹಿಸುವ ವೆಬ್ ಆ್ಯಪ್ (Working Model)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>ವಾರ 11</strong></td>
+                <td>ಪರೀಕ್ಷೆ, ಪರಿಷ್ಕರಣೆ &amp; ಬಳಕೆದಾರರ ಮೌಲ್ಯಮಾಪನ</td>
+                <td>ಗ್ರಾಮೀಣ ಬಳಕೆದಾರರೊಂದಿಗೆ ಪರೀಕ್ಷೆ &amp; ದೋಷ ತಿದ್ದುಪಡಿ</td>
+                <td>ಪರೀಕ್ಷಾ ಫಲಿತಾಂಶಗಳು &amp; ಕಾರ್ಯಕ್ಷಮತೆ ವರದಿ</td>
+              </tr>
+              <tr>
+                <td><strong>ವಾರ 12</strong></td>
+                <td>ಕ್ಷೇತ್ರ ಪ್ರಾತ್ಯಕ್ಷಿಕೆ &amp; ಜಾಗೃತಿ ಅಭಿಯಾನ</td>
+                <td>ಗ್ರಾಮ ಪಂಚಾಯತ್ ವ್ಯಾಪ್ತಿಯಲ್ಲಿ ಅಪ್ಲಿಕೇಶನ್ ಪ್ರದರ್ಶನ</td>
+                <td>ಭಾವಚಿತ್ರಗಳು, ಹಾಜರಾತಿ &amp; ಅನುಷ್ಠಾನ ದಾಖಲೆ</td>
+              </tr>
+              <tr>
+                <td><strong>ವಾರ 13</strong></td>
+                <td>ಫಲಿತಾಂಶಗಳು, ಪ್ರತಿಕ್ರಿಯೆ &amp; ಪ್ರಭಾವದ ದಾಖಲೀಕರಣ</td>
+                <td>ಪ್ರತಿಕ್ರಿಯೆಗಳ ಸಂಕಲನ ಮತ್ತು ಪ್ರಭಾವದ ವಿಶ್ಲೇಷಣೆ</td>
+                <td>ಕರಡು ಸಮಗ್ರ ಯೋಜನಾ ವರದಿ (Draft Report)</td>
+              </tr>
+              <tr>
+                <td><strong>ವಾರ 14</strong></td>
+                <td>ಪ್ರಸ್ತುತಿ ಸಿದ್ಧತೆ &amp; ಮೌಖಿಕ ಪರೀಕ್ಷಾ ಅಭ್ಯಾಸ (Viva)</td>
+                <td>ಪ್ರಸ್ತುತಿ ಸ್ಲೈಡ್‌ಗಳು (PPT) ಮತ್ತು ಅಣಕು ಪ್ರಸ್ತುತಿ</td>
+                <td>ಪಿಪಿಟಿ ಪ್ರಸ್ತುತಿ ಡೆಕ್ (Presentation Deck)</td>
+              </tr>
+              <tr>
+                <td><strong>ವಾರ 15</strong></td>
+                <td>ಅಂತಿಮ ಪ್ರಸ್ತುತಿ, ಸಲ್ಲಿಕೆ &amp; ಸ್ವಯಂ-ಚಿಂತನೆ</td>
+                <td>ಅಂತಿಮ ಯೋಜನಾ ವರದಿ ಸಲ್ಲಿಕೆ &amp; ಮೌಖಿಕ ಪರೀಕ್ಷೆ ಎದುರಿಸುವುದು</td>
+                <td><strong>ಅಂತಿಮ ವರದಿ, ಪ್ರಸ್ತುತಿ &amp; ವೈವಾ (Final Viva)</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top: 24px; padding: 16px; background: #fafafa; border: 1px solid #e0e0e0; border-radius: 8px;">
+          <h4 style="margin-bottom: 8px; color: var(--primary-dark);">📄 ಶೈಕ್ಷಣಿಕ ದಾಖಲಾತಿ ಫೈಲ್‌ಗಳು ಲಭ್ಯವಿರುವ ಸ್ಥಳ:</h4>
+          <p style="font-size: 0.88rem; color: #555; margin-bottom: 10px;">
+            ಯೋಜನೆಯ ಸಂಪೂರ್ಣ 15 ವಾರಗಳ ಅಧಿಕೃತ ವರದಿ, PPT ಸ್ಲೈಡ್‌ಗಳ ಸಾರಾಂಶ ಮತ್ತು ವೈವಾ ಪ್ರಶ್ನೋತ್ತರಗಳು ನಿಮ್ಮ ಪ್ರಾಜೆಕ್ಟ್ ಫೋಲ್ಡರ್‌ನ <code>docs/</code> ಡೈರೆಕ್ಟರಿಯಲ್ಲಿ ಲಿಖಿತ ರೂಪದಲ್ಲಿ ಲಭ್ಯವಿವೆ:
+          </p>
+          <ul style="font-size: 0.85rem; color: #444; padding-left: 20px;">
+            <li><code>docs/VKIT_15_Week_Evidence_Dossier.md</code> — ವಾರ 1 ರಿಂದ 15 ರವರೆಗಿನ ಸಂಪೂರ್ಣ ಅಧಿಕೃತ ಪುರಾವೆಗಳು</li>
+            <li><code>docs/Final_Project_Report.md</code> — ವಿವೇಕಾನಂದ ಕಾಲೇಜು ಸಲ್ಲಿಕೆಗಾಗಿ ಔಪಚಾರಿಕ ಯೋಜನಾ ವರದಿ</li>
+            <li><code>docs/Viva_Presentation_Guide.md</code> — 15 ಸ್ಲೈಡ್‌ಗಳ ಪ್ರಸ್ತುತಿ &amp; ಮೌಖಿಕ ಪರೀಕ್ಷಾ ಪ್ರಶ್ನೋತ್ತರಗಳು</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/translations.js"></script>
+  <script src="js/schemes-data.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/eligibility.js"></script>
+  <script src="js/document-slip.js"></script>
+  <script src="js/survey-analytics.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
